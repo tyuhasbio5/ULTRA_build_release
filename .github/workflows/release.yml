@@ -39,7 +39,7 @@ jobs:
         id: extract_version
         run: echo "::set-output name=version::$(echo ${GITHUB_REF#refs/tags/})"
 
-      - name: Create tar.gz archive
+      - name: Create tar.gz archive # binaries listed here
         run: |
           cd installation/usr/local/bin
           tar -czvf ../../../ULTRA-${{ steps.extract_version.outputs.version }}.${{ matrix.os }}.${{ matrix.arch }}.tar.gz ultra
