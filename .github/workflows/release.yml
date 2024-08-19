@@ -24,11 +24,8 @@ jobs:
           elif [ ${{ matrix.os }} == 'macos-latest' ]; then
             brew install autoconf gcc make
           fi
-      - name: Run autoconf
-        run: autoconf
-
-      - name: Configure
-        run: ./configure
+      - name: cmake
+        run: cmake .
 
       - name: Build
         run: |
